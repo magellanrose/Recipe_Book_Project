@@ -1,0 +1,17 @@
+<a href="/">Home</a>
+
+<h1>Register</h1>
+
+{{#each errors}}
+<p>{{this}}</p>
+{{/each}}
+
+
+<form action="/login" method="POST">
+    <input name="firstName" type="text" placeholder="First Name">
+    <input name="lastName" type="text" placeholder="Last Name">
+    <input name="email" type="email" placeholder="Enter your email">
+    <input name="username" type="text" placeholder="Enter your username">
+    <input name="password" type="password" placeholder="Enter your password">
+    <button>Submit</button>
+</form>

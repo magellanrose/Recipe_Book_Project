@@ -2,6 +2,9 @@
 
 <h1>Log In</h1>
 
+{{#each errors}}
+<p>{{this}}</p>
+{{/each}}
 
 <form action="/login" method="POST">
     <input name="email" type="email" placeholder="Enter your email">

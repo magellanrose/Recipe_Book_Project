@@ -12,7 +12,7 @@ Recipe.init({
         validate: {
             notEmpty: {
                 args: true,
-                msg: 'Recipe is required',
+                msg: 'Recipe name is required',
             },
         },
     },
@@ -33,7 +33,7 @@ Recipe.init({
         trim: true,
         validate: {
             args: true,
-            msg: 'Release date required'
+            msg: 'Ingredients required'
         }
     },
 }, {

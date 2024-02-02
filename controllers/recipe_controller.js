@@ -1,48 +1,39 @@
-const router = require('express').Router();
-const Recipe = require('../models/Recipe');
-const User = require('../models/User');
+module.exports = {
 
-
-// POST route to create a recipe
-
-router.post('/recipes', async (requestObj, responseObj) => {
+    async createRecipe(req, res){
     try {
 
 
         const recipe = await Recipe.create(requestObj.body);
 
-        responseObj.json(recipe);
+        res.json(recipe);
     } catch (err) {
         console.log(err);
 
-        responseObj.json({
+        res.json({
             error: 500,
             message: 'There was an error in storing the recipe'
         });
     }
-});
 
+    },
 
-// Get route to get a recipe by id
-router.get('/recipe/:id', async (requestObj, responseObj) => {
-    const recipe_id = requestObj.params.id;
+    async getRecipeById(req, res){
+        const recipe_id = requestObj.params.id;
 
 
     const recipe = await Recipe.findByPk(recipe_id);
 
     if (recipe) {
-        return responseObj.json(recipe);
+        return res.json(recipe);
     }
 
-    responseObj.status(404).json({
+    res.status(404).json({
         message: 'A recipe with that ID could not be found.'
     })
-});
+    },
 
-
-// Get route to get all recipes with the attached associated user
-
-router.get('/recipes', async (requestObj, responseObj) => {
+async getAllRecipes(req, res){
     try {
         const recipes = await Recipe.findAll({
             include: {
@@ -52,19 +43,17 @@ router.get('/recipes', async (requestObj, responseObj) => {
                 }
             }
         });
-        responseObj.json(recipes);
+        res.json(recipes);
     } catch (err) {
         console.log(err);
-        responseObj.json({
+        res.json({
             error: 500,
             message: 'There was an error in retrieving the recipes',
         });
     }
-});
+},
 
-
-// Delete route to delete a recipe
-router.delete('/recipes/:id', async (requestObj, responseObj) => {
+async deleteRecipe(req, res){
     try {
         const recipeId = requestObj.params.id;
 
@@ -84,12 +73,9 @@ router.delete('/recipes/:id', async (requestObj, responseObj) => {
         console.log(err);
         responseObj.status(500).json({ error: 'There was an error in deleting the recipe' });
     }
-});
+},
 
-
-// Get route to get a single recipe by title
-
-router.get('/recipes/search', async (requestObj, responseObj) => {
+async searchRecipes(req, res){
     try {
         const title = requestObj.query.title;
 
@@ -122,6 +108,6 @@ router.get('/recipes/search', async (requestObj, responseObj) => {
         console.log(err);
         responseObj.status(500).json({ error: 'There was an error in retrieving the recipe' });
     }
-});
+}
 
-module.exports = router;
+}

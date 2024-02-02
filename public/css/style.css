@@ -1,0 +1,19 @@
+* {
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
+
+html,
+body {
+    height: 100%;
+    background-image: '';
+    background-size: cover;
+}
+
+/* HEADER */
+header {
+ display: block;
+ background-color: '';
+ width: 100%;
+}
+

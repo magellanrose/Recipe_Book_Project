@@ -1,23 +1,24 @@
 const db = require('./db/connection');
 
 const express = require('express');
+require('dotenv').config()
 
 const { engine } = require('express-handlebars');
 
 const session = require('express-session');
 
 
-const user_routes = require('./controllers/user_routes');
-const recipe_routes = require('./controllers/recipe_routes');
-const view_routes = require('./controllers/view_routes');
-const form_routes = require('./controllers/form_routes');
+const user_routes = require('./routes/user_routes');
+const recipe_routes = require('./routes/recipe_routes');
+const view_routes = require('./routes/view_routes');
+const form_routes = require('./routes/form_routes');
 
 const PORT = 4444;
 
 const app = express();
 
 
-const db = require('./db/connection');
+// const db = require('./db/connection');
 
 app.use(express.json());
 

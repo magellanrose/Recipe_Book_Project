@@ -14,6 +14,10 @@ router.get('/create/user', viewController.showUserForm);
 
 router.get('/create/recipe', viewController.showRecipeForm);
 
+router.get('/register', viewController.showRegisterPage);
+
+router.get('/login', viewController.showUserForm);
+
 // SHOW THE DATA PAGE
 router.get('/data', viewController.showDataPage);
 

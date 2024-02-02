@@ -1,13 +1,13 @@
-<a href="/">Home</a>
+<a class="text-center" href="/">Home</a>
 
-<h1>Log In</h1>
+<h1 class="text-center">Log In</h1>
 
 {{#each errors}}
 <p>{{this}}</p>
 {{/each}}
 
 <form action="/login" method="POST">
-    <input name="email" type="email" placeholder="Enter your email">
-    <input name="password" type="password" placeholder="Enter your password">
-    <button>Submit</button>
+    <input class="form-control form-control-lg" name="email" type="email" placeholder="Enter your email">
+    <input class="form-control form-control-lg" name="password" type="password" placeholder="Enter your password">
+    <button class="btn btn-info">Submit</button>
 </form>

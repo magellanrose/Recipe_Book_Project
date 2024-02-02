@@ -8,6 +8,7 @@ body {
     height: 100%;
     background-image: '';
     background-size: cover;
+    background-color: #555;
 }
 
 /* HEADER */
@@ -16,4 +17,28 @@ header {
  background-color: '';
  width: 100%;
 }
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    /* padding: 5px; */
+    margin: 25px auto 0;
+}
+
+form a {
+    justify-content: flex-start;
+    text-decoration: none;
+}
+
+form button {
+    background-color: aqua;
+    color: black;
+}
+
+form input {
+    margin-bottom: 10px;
+}
+
 

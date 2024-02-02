@@ -8,15 +8,19 @@ module.exports = {
   },
 
   async showUserForm(req, res) {
-    res.render('user_form', {
+    res.render('form/login_form', {
       title: 'User Form'
     });
   },
 
   async showRecipeForm(req, res){
-    res.render('recipe_form', {
+    res.render('form/recipe_form', {
       title: 'Recipe Form'
     });
+  },
+
+  async showRegisterPage(req, res) {
+    res.render('form/register_form');
   },
 
   async showDataPage(req, res) {

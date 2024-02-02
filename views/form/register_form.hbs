@@ -1,6 +1,6 @@
 <a href="/">Home</a>
 
-<h1>Register</h1>
+<h1 class="text-center">Register</h1>
 
 {{#each errors}}
 <p>{{this}}</p>
@@ -8,10 +8,10 @@
 
 
 <form action="/register" method="POST">
-    <input name="firstName" type="text" placeholder="First Name">
-    <input name="lastName" type="text" placeholder="Last Name">
-    <input name="email" type="email" placeholder="Enter your email">
-    <input name="username" type="text" placeholder="Enter your username">
-    <input name="password" type="password" placeholder="Enter your password">
-    <button>Submit</button>
+    <input class="form-control form-control-lg" name="firstName" type="text" placeholder="First Name">
+    <input class="form-control form-control-lg" name="lastName" type="text" placeholder="Last Name">
+    <input class="form-control form-control-lg" name="email" type="email" placeholder="Enter your email">
+    <input class="form-control form-control-lg" name="username" type="text" placeholder="Enter your username">
+    <input class="form-control form-control-lg" name="password" type="password" placeholder="Enter your password">
+    <button class="btn btn-info">Submit</button>
 </form>

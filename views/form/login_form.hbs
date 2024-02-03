@@ -3,11 +3,11 @@
 <h1 class="text-center">Log In</h1>
 
 {{#each errors}}
-<p>{{this}}</p>
+<p class="text-danger">{{this}}</p>
 {{/each}}
 
 <form action="/login" method="POST">
     <input class="form-control form-control-lg" name="email" type="email" placeholder="Enter your email">
     <input class="form-control form-control-lg" name="password" type="password" placeholder="Enter your password">
-    <button class="btn btn-info">Submit</button>
+    <button class="btn btn-info mt-3">Submit</button>
 </form>

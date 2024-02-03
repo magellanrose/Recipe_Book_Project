@@ -1,27 +1,26 @@
+<header class="d-flex justify-content-between align-items-center">
 
+    {{#if user}}
+    <p class="text-center">
 
+        Welcome, {{user.username}}
+        <a href="/logout">Log Out</a>
+    </p>
+    {{else}}
+    <a class="text-center" href="/login">Log In</a>
+    {{/if}}
+</header>
 
-   <header>
+<h1 class="text-center">Flavor Hub</h1>
+<p class="text-center">Welcome to our Recipe Book App!</p>
 
-        {{#if user}}
-        <p>
-
-            Welcome, {{user.username}}
-            <a href="/logout">Log Out</a>
-        </p>
-        {{else}}
-        {{/if}}
-    </header>
-
-    <h1 class="text-center">Flavor Hub</h1>
-    <p class="text-center">Welcome to our Recipe Book App!</p>
-
-  
-
-    <h3>Recipes</h3>
-    <img src="https://api.lorem.space/image/ai?w=150&h=150" alt="">
- 
-
-
-
-</body>
+<div class="d-flex justify-content-center">
+    <div class="card">
+        <img src="https://api.lorem.space/image/ai?w=150&h=150" class="card-img-top" alt="">
+        <div class="card-body">
+            <h5 class="card-title">Recipe Name</h5>
+            <p class="card-text">Recipe description...</p>
+            <a href="#" class="btn btn-info">View Recipe</a>
+        </div>
+    </div>
+</div>

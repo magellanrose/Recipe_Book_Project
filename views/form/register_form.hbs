@@ -3,9 +3,8 @@
 <h1 class="text-center">Register</h1>
 
 {{#each errors}}
-<p>{{this}}</p>
+<p class="text-danger">{{this}}</p>
 {{/each}}
-
 
 <form action="/register" method="POST">
     <input class="form-control form-control-lg" name="firstName" type="text" placeholder="First Name">
@@ -13,5 +12,5 @@
     <input class="form-control form-control-lg" name="email" type="email" placeholder="Enter your email">
     <input class="form-control form-control-lg" name="username" type="text" placeholder="Enter your username">
     <input class="form-control form-control-lg" name="password" type="password" placeholder="Enter your password">
-    <button class="btn btn-info">Submit</button>
+    <button class="btn btn-info mt-3">Submit</button>
 </form>

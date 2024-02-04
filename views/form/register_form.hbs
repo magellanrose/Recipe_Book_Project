@@ -1,17 +1,36 @@
-<a href="/">Home</a>
+{{!-- <a href="/">Home</a> --}}
 
-<h1 class="text-center">Register</h1>
+
 
 {{#each errors}}
-<p>{{this}}</p>
+<p class="text-danger">{{this}}</p>
 {{/each}}
 
 
-<form action="/register" method="POST">
-    <input class="form-control form-control-lg" name="firstName" type="text" placeholder="First Name">
-    <input class="form-control form-control-lg" name="lastName" type="text" placeholder="Last Name">
-    <input class="form-control form-control-lg" name="email" type="email" placeholder="Enter your email">
-    <input class="form-control form-control-lg" name="username" type="text" placeholder="Enter your username">
-    <input class="form-control form-control-lg" name="password" type="password" placeholder="Enter your password">
-    <button class="btn btn-info">Submit</button>
-</form>
+<section class="container mt-5">
+    <h1 class="text-center">Register</h1>
+    <div class="row justify-content-center col-md-6 mx-auto">
+        <form action="/register" method="POST">
+            <div class="mb-3">
+                <input class="form-control form-control-lg" name="firstName" type="text" placeholder="First Name">
+            </div>
+            <div class="mb-3">
+                <input class="form-control form-control-lg" name="lastName" type="text" placeholder="Last Name">
+            </div>
+            <div class="mb-3">
+                <input class="form-control form-control-lg" name="email" type="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+                <input class="form-control form-control-lg" name="username" type="text"
+                    placeholder="Enter your username">
+            </div>
+            <div class="mb-3">
+                <input class="form-control form-control-lg" name="password" type="password"
+                    placeholder="Enter your password">
+            </div>
+            <div class="text-center">
+                <button class="btn btn-outline-dark mt-3">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>

@@ -1,10 +1,24 @@
-<a class="text-center" href="/">Home</a>
+{{!-- <a class="text-center" href="/">Home</a> --}}
 
-<h1 class="text-center">Add a Dish</h1>
 
-<form action="/create/recipe" method="POST">
-    <input class="form-control form-control-lg" name="title" type="text" placeholder="Enter the name of the dish">
-    <input class="form-control form-control-lg" name="ingredients" type="text" placeholder="Enter the ingredients">
-    <input class="form-control form-control-lg" name="recipe" type="text" placeholder="Enter the recipe">
-    <button class="btn btn-info">Submit</button>
-</form>
+<section class="container mt-5">
+    <h1 class="text-center">Add a Dish</h1>
+    <div class="row justify-content-center text-center col-md-6 mx-auto">
+        <form action="/create/recipe" method="POST">
+            <div class="mb-3">
+                <input class="form-control form-control-lg" name="title" type="text"
+                    placeholder="Enter the name of the dish">
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control form-control-lg" name="ingredients" rows="4"
+                    placeholder="Enter the ingredients"></textarea>
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control form-control-lg" name="recipe" rows="8"
+                    placeholder="Enter the recipe"></textarea>
+            </div>
+
+            <button class="btn btn-outline-dark mt-3">Submit</button>
+        </form>
+    </div>
+</section>

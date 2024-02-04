@@ -1,26 +1,125 @@
 <header class="d-flex justify-content-between align-items-center">
 
-    {{#if user}}
-    <p class="text-center">
+    <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+        <a href="/" class="navbar-brand">FLAVOR/HUB</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        Welcome, {{user.username}}
-        <a href="/logout">Log Out</a>
-    </p>
-    {{else}}
-    <a class="text-center" href="/login">Log In</a>
-    {{/if}}
+
+        <div class="collapse navbar-collapse" id="navLinks">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a href="/login" class="nav-link d-flex-justify-content-end">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/register" class="nav-link d-flex-justify-content-end">Register</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="/create/recipe" class="nav-link d-flex-justify-content-end">Recipes</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
 </header>
+{{#if user}}
+<p class="text-center">Welcome, {{user.username}} <a href="/logout">Log Out</a></p>
+{{else}}
+{{!-- <a class="text-center" href="/login">Log In</a> --}}
+{{/if}}
 
-<h1 class="text-center">Flavor Hub</h1>
-<p class="text-center">Welcome to our Recipe Book App!</p>
 
-<div class="d-flex justify-content-center">
+
+{{!-- <div class="d-flex justify-content-center mt-3">
     <div class="card">
-        <img src="https://api.lorem.space/image/ai?w=150&h=150" class="card-img-top" alt="">
+        <img src="https://www.placecage.com/c/150/150" class="card-img-top" alt="">
         <div class="card-body">
             <h5 class="card-title">Recipe Name</h5>
             <p class="card-text">Recipe description...</p>
             <a href="#" class="btn btn-info">View Recipe</a>
         </div>
     </div>
-</div>
+</div> --}}
+
+
+<section class="container-fluid px-0">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <div id="headingGroup" class="text-white text-center d-none d-lg-block mt-5">
+                <h1 class="">Flavor<span>/</span>Hub</h1>
+                <h1 class="">Flavor<span>/</span>Hub</h1>
+                <h1 class="">Flavor<span>/</span>Hub</h1>
+                <h1 class="">Flavor<span>/</span>Hub</h1>
+                <h1 class="">Flavor<span>/</span>Hub</h1>
+                <h1 class="">Flavor<span>/</span>Hub</h1>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img class="img-fluid" src="/images/salmon.jpg" alt="">
+        </div>
+    </div>
+
+</section>
+<section class="container-fluid px-0 text-center">
+    <div class="row align-items-center content">
+        <div class="col-md-6 order-2 order-md-1"><img src="/images/pizza.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-6 text-center order-1 order-2">
+            <div class="row justify-content-center">
+
+                <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                    <h2>FLAVOR HUB</h2>
+                    <img src="imgs/lolli_icon.png" alt="" class="d-none d-lg-inline">
+                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque error vel alias
+                        quos,
+                        odit inventore. Vitae sapiente distinctio maxime voluptatum harum laudantium, voluptatem
+                        maiores
+                        explicabo aut hic, ducimus dicta excepturi.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center content">
+
+        <div class="col-6 text-center ">
+            <div class="row justify-content-center">
+
+                <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                    <h2>FLAVOR HUB</h2>
+                    <img src="imgs/lolli_icon.png" alt="" class="d-none d-lg-inline">
+                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque error vel alias
+                        quos,
+                        odit inventore. Vitae sapiente distinctio maxime voluptatum harum laudantium, voluptatem
+                        maiores
+                        explicabo aut hic, ducimus dicta excepturi.</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6"><img src="/images/chicken.jpg" alt="" class="img-fluid">
+        </div>
+    </div>
+    <div class="row align-items-center content">
+        <div class="col-md-6 order-2 order-md-1"><img src="/images/pasta.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-6 text-center order-1 order-2">
+            <div class="row justify-content-center">
+
+                <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                    <h2>FLAVOR HUB</h2>
+                    <img src="imgs/lolli_icon.png" alt="" class="d-none d-lg-inline">
+                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque error vel alias
+                        quos,
+                        odit inventore. Vitae sapiente distinctio maxime voluptatum harum laudantium, voluptatem
+                        maiores
+                        explicabo aut hic, ducimus dicta excepturi.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

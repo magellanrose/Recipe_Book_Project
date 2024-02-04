@@ -1,44 +1,79 @@
-* {
-    font-family: "Roboto", sans-serif;
-    color: white;
-}
-
-html,
 body {
-    height: 100%;
-    background-image: '';
-    background-size: cover;
-    background-color: #555;
+    background: #d8b8b8;
+    font-family: 'Courier New', Courier, monospace
 }
 
-/* HEADER */
-header {
- display: block;
- background-color: '';
- width: 100%;
+
+
+
+
+#mainNavbar .navbar-brand {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 100;
 }
 
-/* FORM */
-form {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    /* padding: 5px; */
-    margin: 25px auto 0;
+.blurb h2 {
+    color: black;
+    font-weight: 100;
+    font-size: 2.5rem;
 }
 
-form a {
-    justify-content: flex-start;
-    text-decoration: none;
+.blurb p {
+    color: #fff;
+    font-weight: 100;
+    font-size: 1rem;
+    line-height: 2;
 }
 
-form button {
-    background-color: aqua;
+.content {
+    margin-top: 100px;
+}
+
+
+#mainNavbar {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+#mainNavbar .nav-link {
+    color: black
+}
+
+#mainNavbar .nav-link:hover {
+    color: #fff;
+}
+
+#mainNavbar .navbar-brand:hover {
+    color: #fff;
+}
+
+#headingGroup span {
     color: black;
 }
 
-form input {
-    margin-bottom: 10px;
+#headingGroup h1 {
+    font-size: 4rem;
+    font-weight: 100;
+
+
 }
 
 
+
+.navbar.scrolled {
+    background: rgb(167, 137, 137);
+    transition: background 500ms
+}
+
+
+
+@media(max-width: 1200px) {
+    #headingGroup h1 {
+        font-size: 3rem;
+        font-weight: 100;
+
+
+    }
+
+}

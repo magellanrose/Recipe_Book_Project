@@ -1,12 +1,12 @@
-<a href="/">Go Back</a>
+{{!-- <a href="/"></a> --}}
 <br>
 <br>
 
 <main class="row">
     <section class="user-output col">
-        <h1>Welcome, {{user.username}}</h1>
+        <h1>Welcome, {{user.firstName}}</h1>
         <hr>
-        {{#each user.books}}
+        {{#each user.recipe}}
         <div>
             <h3>Title: {{recipe}}</h3>
             <p>User: {{user}}</p>

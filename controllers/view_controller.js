@@ -3,7 +3,8 @@ module.exports = {
   async showHomePage(req, res) {
 
     res.render('home', {
-      title: 'User App API Documentation'
+      title: 'User App API Documentation',
+      user: req.user
     });
   },
 
@@ -17,7 +18,8 @@ module.exports = {
   async showRecipeForm(req, res){
     res.render('form/recipe_form', {
       title: 'Recipe Form',
-      recipe: true
+      recipe: true,
+      user: req.user
     });
   },
 
@@ -43,5 +45,10 @@ module.exports = {
     users: users.map(usrObj => usrObj.get({ plain: true })),
     recipes: recipes.map(recipeObj => recipeObj.get({ plain: true }))
   });
-  }
+  },
+
+  async logoutUser(req, res) {
+    req.session.destroy()
+    res.redirect('/')
+  },
 }

@@ -1,4 +1,5 @@
 const User =require('../models/User')
+const Recipe =require('../models/Recipe')
 
 module.exports = {
 async createUser(req, res) {
@@ -45,7 +46,9 @@ async loginUser(req,res) {
       }
   
       req.session.user_id = user.id;
-  
+      
+      console.log(user)
+
       res.redirect('/');
     } catch (err) {
       let messages;
@@ -70,7 +73,7 @@ async createRecipe(req, res) {
         await Recipe.create(req.body);
 
         res.redirect('/?recipe_added=true');
-    } catch (error) {
+    } catch (err) {
         console.log(err);
         res.redirect('/create/recipe');
     }

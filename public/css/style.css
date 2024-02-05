@@ -22,14 +22,16 @@ body {
 .blurb h2 {
     color: black;
     font-weight: 100;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+
 }
 
 .blurb p {
     color: #fff;
     font-weight: 100;
-    font-size: 1rem;
+    font-size: 2rem;
     line-height: 2;
+
 }
 
 .content {
@@ -54,23 +56,7 @@ body {
     text-decoration: underline;
 }
 
-/* #mainNavbar .nav-link::before {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 0%;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #fff;
-    border-radius: 50%;
-    transition: width 0.4s ease, height 0.4s ease;
-} */
 
-/* #mainNavbar .nav-link:hover::before {
-    width: 100%;
-    height: 100%;
-} */
 
 #mainNavbar .navbar-brand:hover {
     color: #fff;

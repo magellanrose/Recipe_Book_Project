@@ -3,9 +3,9 @@ const { faker } = require('@faker-js/faker');
 const mysql = require('mysql2');
 
 const db = mysql.createConnection({
-    host: 'root',
-    // user: '',
-    // password: 'password123' || '',
+    host: 'localhost',
+    user: '',
+    password: 'password123' || '',
     database: 'recipe_book_db',
     multipleStatements: true
 }).promise();

@@ -76,6 +76,9 @@ footer {
 
 }
 
+.active{
+    text-decoration: underline;
+}
 
 
 .navbar.scrolled {

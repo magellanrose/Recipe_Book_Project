@@ -25,13 +25,13 @@
             <div class="collapse navbar-collapse" id="navLinks">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a href="/login" class="nav-link d-flex-justify-content-end custom-link">Log In</a>
+                        <a href="/login" class="{{#if login}}active{{/if}} nav-link d-flex-justify-content-end custom-link">Log In</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/register" class="nav-link d-flex-justify-content-end custom-link">Register</a>
+                        <a href="/register" class="{{#if register}}active{{/if}} nav-link d-flex-justify-content-end custom-link">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/create/recipe" class="nav-link d-flex-justify-content-end custom-link">Recipes</a>
+                        <a href="/create/recipe" class="{{#if recipe}}active{{/if}} nav-link d-flex-justify-content-end custom-link">Recipes</a>
                     </li>
                 </ul>
             </div>
@@ -63,7 +63,7 @@
             <div class="d-flex flex-column text-center center-block p-1 justify-content-center ">
                 <div class="d-flex flex-row align-items-center justify-content-center">
                     <img class="footerlogo" src="images/image.png" alt="footer-logo">
-                    <h2 class="text-dark">Flavor<span>/</span>Hub</h2>
+                    <h2 class="text-light">Flavor<span class="text-dark">/</span>Hub</h2>
                 </div>
 
 

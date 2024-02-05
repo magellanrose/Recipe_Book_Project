@@ -5,7 +5,7 @@ require('dotenv').config()
 
 const { engine } = require('express-handlebars');
 
-// const session = require('express-session');
+const session = require('express-session');
 
 
 const user_routes = require('./routes/user_routes');
@@ -35,12 +35,12 @@ app.engine('hbs', engine({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
 app.set('views', './views');
 
-// app.use(session({
-//     secret: process.env.SESSION_SECRET,
-//     resave: false,
-//     saveUninitialized: false,
-//     // cookie: { maxAge: 60 * 60 * 1000 }
-// }));
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    // cookie: { maxAge: 60 * 60 * 1000 }
+}));
 
 
 // Load Routes

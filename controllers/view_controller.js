@@ -7,20 +7,24 @@ module.exports = {
     });
   },
 
-  async showUserForm(req, res) {
+  async showLoginPage(req, res) {
     res.render('form/login_form', {
-      title: 'User Form'
+      title: 'User Form',
+      login: true
     });
   },
 
   async showRecipeForm(req, res){
     res.render('form/recipe_form', {
-      title: 'Recipe Form'
+      title: 'Recipe Form',
+      recipe: true
     });
   },
 
   async showRegisterPage(req, res) {
-    res.render('form/register_form');
+    res.render('form/register_form',{
+      register: true
+    });
   },
 
   async showDataPage(req, res) {

@@ -1,10 +1,13 @@
 body {
     background: #d8b8b8;
-    font-family: 'Courier New', Courier, monospace
+    font-family: 'Courier New', Courier, monospace;
 }
 
 
-
+footer {
+    flex: 1;
+    background-color: rgb(167, 137, 137);
+}
 
 
 #mainNavbar .navbar-brand {
@@ -91,3 +94,12 @@ body {
     }
 
 }
+
+.footerlogo{
+    width: auto;
+    height: 65px;
+}
+
+/* .sectionfill{
+    height: 60vh;
+} */

@@ -1,4 +1,7 @@
-const User = require('../models/User')
+
+const User =require('../models/User')
+const Recipe =require('../models/Recipe')
+
 
 module.exports = {
   async createUser(req, res) {
@@ -46,6 +49,7 @@ module.exports = {
 
       req.session.user_id = user.id;
 
+
       res.redirect('/');
     } catch (err) {
       let messages;
@@ -69,11 +73,12 @@ module.exports = {
     try {
       await Recipe.create(req.body);
 
+
       res.redirect('/?recipe_added=true');
     } catch (err) {
       console.log(err);
       res.redirect('/create/recipe');
-    }
+
   }
 
 }

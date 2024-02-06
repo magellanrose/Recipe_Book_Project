@@ -22,7 +22,7 @@ Visit http://localhost:4444 in your browser.
 # Github Repository:
 https://github.com/magellanrose/Recipe_Book_Project
 ## Mock Up
-![Mock-up](./public/images/Screenshot%202024-02-06%20103513.png)
+![Mock-up](./public/images/Screenshot%202024-02-06%20123647.png)
 ## License:
 MIT </br>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

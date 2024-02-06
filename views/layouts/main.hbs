@@ -33,6 +33,12 @@
                     <li class="nav-item">
                         <a href="/register"
                             class="{{#if register}}active{{/if}} nav-link d-flex-justify-content-end custom-link">Register</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="/create/recipe"
+                            class="{{#if recipe}}active{{/if}} nav-link d-flex-justify-content-end custom-link">Recipes</a>
+
                     </li>
                     {{else}}
                     <li class="nav-item d-flex align-items-center me-4">
@@ -45,6 +51,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="/logout" class="nav-link d-flex-justify-content-end custom-link">Log Out</a>
+
                     </li>
                     {{/unless}}
                 </ul>

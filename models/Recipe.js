@@ -28,7 +28,7 @@ Recipe.init({
         },
     },
     ingredients: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
         allowNull: true,
         trim: true,
         validate: {

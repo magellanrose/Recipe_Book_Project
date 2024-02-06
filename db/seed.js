@@ -1,53 +1,65 @@
 const { faker } = require('@faker-js/faker');
+const User = require('../models/User');
+const Recipe = require('../models/Recipe');
+const db = require('./connection');
 
-const mysql = require('mysql2');
+const userData = [];
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: '',
-    password: 'password123' || '',
-    database: 'recipe_book_db',
-    multipleStatements: true
-}).promise();
-
-const users = [];
 let amount = 10;
 
 while (amount--) {
-    users.push({
+    userData.push({
         username: faker.internet.userName(),
         email: faker.internet.email(),
         password: 'password123'
     });
 }
 
-const preparedUsers = users.map(user => [user.username, user.email, user.password]);
 
-const tableSchema = `
-  CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(250) NOT NULL,
-    email VARCHAR(250) NOT NULL,
-    password VARCHAR(250) NOT NULL
-);
-  `;
+
+
 
 async function seed() {
+
     try {
-        await db.query(`DROP TABLE IF EXISTS users; ${tableSchema}`);
+        await db.sync({
+            force: true
+        })
 
-        console.log('Table created');
 
-        await db.query('INSERT INTO users (username, email, password) VALUES ?', [preparedUsers]);
+        console.log('Tables created');
 
-        console.log('users seeded successfully')
+        const users = await User.bulkCreate(userData);
+
+        console.log('users seeded successfully');
+
+
+        for (let user of users) {
+            const recipes = [];
+            let recipeCount = 5;
+
+            while (recipeCount--) {
+                recipes.push({
+                    title: faker.word.noun(),
+                    recipe: faker.lorem.sentence(),
+                    ingredients: 'turtles, carrots, potatoes, pickles',
+                    userId: user.id
+                })
+            }
+
+            try {
+                await Recipe.bulkCreate(recipes)
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+        console.log('recipes added');
 
         process.exit();
     } catch (err) {
         console.log(err);
     }
 }
-
-console.log(preparedUsers);
 
 seed();

@@ -87,7 +87,7 @@ User.init(
 
 );
 // Define the association
-User.hasMany(Recipe, { foreignKey: 'userId' });
-Recipe.belongsTo(User, { foreignKey: 'userId' });
+User.hasMany(Recipe);
+Recipe.belongsTo(User);
 
 module.exports = User;

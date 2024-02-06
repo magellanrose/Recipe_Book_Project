@@ -1,15 +1,16 @@
 {{!-- <a href="/"></a> --}}
-<br>
-<br>
 
-<main class="row">
+
+<main class="row flex-fill">
     <section class="user-output col">
-        <h1>Welcome, {{user.firstName}}</h1>
+
         <hr>
-        {{#each user.recipe}}
+        {{#each recipes}}
         <div>
-            <h3>Title: {{recipe}}</h3>
-            <p>User: {{user}}</p>
+            <h3>Title: {{title}}</h3>
+            <p>{{recipe}}</p>
+            <p>{{ingredients}}</p>
+            <p>User: {{user.username}}</p>
 
         </div>
         {{/each}}

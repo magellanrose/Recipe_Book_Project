@@ -1,6 +1,5 @@
-
-const User =require('../models/User')
-const Recipe =require('../models/Recipe')
+const User = require('../models/User');
+const Recipe = require('../models/Recipe');
 
 
 module.exports = {
@@ -71,14 +70,23 @@ module.exports = {
 
   async createRecipe(req, res) {
     try {
-      await Recipe.create(req.body);
 
 
-      res.redirect('/?recipe_added=true');
+      await Recipe.create({
+        ...req.body,
+        userId: req.user.id
+      });
+
+      res.redirect('/data');
     } catch (err) {
       console.log(err);
-      res.redirect('/create/recipe');
 
+      res.redirect('/create/recipe');
+      // res.json({
+      //     error: 500,
+      //     message: 'There was an error in storing the recipe'
+      // });
+    }
   }
 
 }

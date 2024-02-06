@@ -1,4 +1,9 @@
+const User = require('../models/User');
+const Recipe = require('../models/Recipe');
+const { fn, col } = require('sequelize');
+
 module.exports = {
+
 
   async showHomePage(req, res) {
 
@@ -15,7 +20,7 @@ module.exports = {
     });
   },
 
-  async showRecipeForm(req, res){
+  async showRecipeForm(req, res) {
     res.render('form/recipe_form', {
       title: 'Recipe Form',
       recipe: true,
@@ -24,27 +29,33 @@ module.exports = {
   },
 
   async showRegisterPage(req, res) {
-    res.render('form/register_form',{
+    res.render('form/register_form', {
       register: true
     });
   },
 
   async showDataPage(req, res) {
-    const users = await User.findAll();
-  const recipes = await Recipe.findAll({
-    include: User,
-    attributes: [
-      'id',
-      'title',
-      'author',
-      [fn('date_format', col('release_date'), '%m/%d/%Y'), 'formatted_date']
-    ]
-  });
+    const users = await User.findAll()
 
-  responseObj.render('data', {
-    users: users.map(usrObj => usrObj.get({ plain: true })),
-    recipes: recipes.map(recipeObj => recipeObj.get({ plain: true }))
-  });
+    if (!users.length) {
+      return res.redirect('/login')
+    }
+
+    const recipes = await Recipe.findAll({
+      include: User,
+      attributes: [
+        'id',
+        'title',
+        'recipe',
+        'ingredients'
+        // [fn('date_format', col('createdAt'), '%m/%d/%Y'), 'formatted_date']
+      ]
+    });
+
+    res.render('data', {
+      user: req.user,
+      recipes: recipes && recipes.map(recipeObj => recipeObj.get({ plain: true }))
+    });
   },
 
   async logoutUser(req, res) {

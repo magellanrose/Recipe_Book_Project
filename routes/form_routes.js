@@ -25,7 +25,7 @@ router.post('/register', formController.createUser);
 
 router.post('/login', formController.loginUser);
 // POST - CREATE A RECIPE ROUTE
-router.post('/create/recipe', protect, formController.createRecipe);
+router.post('/create/recipe', protect, attachUser, formController.createRecipe);
 
 
 

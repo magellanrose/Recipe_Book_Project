@@ -15,7 +15,7 @@
 
 
 
-<body>
+<body class="d-flex flex-column">
     <header class="d-flex justify-content-between align-items-center mb-3">
         <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
             <a href="/" class="navbar-brand custom-brand"><img src="/images/image.png" alt="logo"></a>
@@ -36,11 +36,6 @@
                             class="{{#if register}}active{{/if}} nav-link d-flex-justify-content-end custom-link">Register</a>
 
                     </li>
-                    <li class="nav-item">
-                        <a href="/create/recipe"
-                            class="{{#if recipe}}active{{/if}} nav-link d-flex-justify-content-end custom-link">Recipes</a>
-
-                    </li>
                     {{else}}
                     <li class="nav-item d-flex align-items-center me-4">
                         <p class="text-center m-0">Welcome, {{user.username}}</p>
@@ -48,13 +43,20 @@
                     </li>
                     <li class="nav-item">
                         <a href="/create/recipe"
-                            class="{{#if recipe}}active{{/if}} nav-link d-flex-justify-content-end custom-link">Add Recipe</a>
+                            class="{{#if recipe}}active{{/if}} nav-link d-flex-justify-content-end custom-link">Add
+                            Recipe</a>
                     </li>
                     <li class="nav-item">
                         <a href="/logout" class="nav-link d-flex-justify-content-end custom-link">Log Out</a>
 
                     </li>
                     {{/unless}}
+                    <li class="nav-item">
+                        <a href="/data"
+                            class="{{#if register}}active{{/if}} nav-link d-flex-justify-content-end custom-link">View
+                            All Recipes</a>
+
+                    </li>
                 </ul>
             </div>
         </nav>

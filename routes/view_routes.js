@@ -9,7 +9,7 @@ const viewController = require('../controllers/view_controller')
 
 
 function protect(req, res, next) {
-    if(!req.session.user_id) {
+    if (!req.session.user_id) {
         return res.redirect('/login')
     }
     next()
@@ -36,7 +36,7 @@ router.get('/login', viewController.showLoginPage);
 router.get('/logout', viewController.logoutUser);
 
 // SHOW THE DATA PAGE
-router.get('/data', viewController.showDataPage);
+router.get('/data', attachUser, viewController.showDataPage);
 
 
 module.exports = router;

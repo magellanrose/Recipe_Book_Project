@@ -1,3 +1,8 @@
+html,
+body {
+    height: 100%;
+}
+
 body {
     background: #d8b8b8;
     font-family: 'Courier New', Courier, monospace;
@@ -5,7 +10,7 @@ body {
 
 
 footer {
-    flex: 1;
+    /* flex: 1; */
     background-color: rgb(167, 137, 137);
 }
 
@@ -76,7 +81,7 @@ footer {
 
 }
 
-.active{
+.active {
     text-decoration: underline;
 }
 
@@ -98,7 +103,7 @@ footer {
 
 }
 
-.footerlogo{
+.footerlogo {
     width: auto;
     height: 65px;
 }

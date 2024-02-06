@@ -24,7 +24,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navLinks">
-                <ul class="navbar-nav ">
+                <ul class="navbar-nav">
+                    {{#unless user}}
                     <li class="nav-item">
                         <a href="/login"
                             class="{{#if login}}active{{/if}} nav-link d-flex-justify-content-end custom-link">Log
@@ -33,11 +34,27 @@
                     <li class="nav-item">
                         <a href="/register"
                             class="{{#if register}}active{{/if}} nav-link d-flex-justify-content-end custom-link">Register</a>
+
                     </li>
                     <li class="nav-item">
                         <a href="/create/recipe"
                             class="{{#if recipe}}active{{/if}} nav-link d-flex-justify-content-end custom-link">Recipes</a>
+
                     </li>
+                    {{else}}
+                    <li class="nav-item d-flex align-items-center me-4">
+                        <p class="text-center m-0">Welcome, {{user.username}}</p>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="/create/recipe"
+                            class="{{#if recipe}}active{{/if}} nav-link d-flex-justify-content-end custom-link">Add Recipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout" class="nav-link d-flex-justify-content-end custom-link">Log Out</a>
+
+                    </li>
+                    {{/unless}}
                 </ul>
             </div>
         </nav>

@@ -14,7 +14,6 @@ footer {
     background-color: rgb(167, 137, 137);
 }
 
-
 #mainNavbar .navbar-brand {
     color: black;
     font-size: 1.5rem;
@@ -106,6 +105,10 @@ footer {
 .footerlogo {
     width: auto;
     height: 65px;
+}
+
+main {
+    margin-top: 80px !important;
 }
 
 /* .sectionfill{

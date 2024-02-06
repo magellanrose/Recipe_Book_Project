@@ -1,10 +1,8 @@
-{{!-- <a href="/"></a> --}}
+<!-- {{!-- <a href="/"></a> --}} -->
 
 
 <main class="row flex-fill">
     <section class="user-output col">
-
-        <hr>
         {{#each recipes}}
         <div>
             <h3>Title: {{title}}</h3>
@@ -14,5 +12,9 @@
 
         </div>
         {{/each}}
+
+        {{#unless recipes}}
+        <h2>No Recipes Added.</h2>
+        {{/unless}}
     </section>
 </main>

@@ -32,14 +32,17 @@ Recipe.init({
         allowNull: true,
         trim: true,
         validate: {
-            args: true,
-            msg: 'Ingredients required'
-        }
-    },
-}, {
-    sequelize,
-    modelName: 'recipe',
-});
+            notEmpty: {
+                args: true,
+                msg: 'Ingredients are required',
+            },
+        },
+    }
+},
+    {
+        sequelize,
+        modelName: 'recipe',
+    });
 
 // Define the association
 

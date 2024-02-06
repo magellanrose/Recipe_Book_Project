@@ -4,8 +4,22 @@ const User = require('../models/User');
 const recipeController = require('../controllers/recipe_controller');
 
 // POST route to create a recipe
+function protect(req, res, next) {
+    if (!req.session.user_id) {
+        return res.redirect('/login')
+    }
+    next()
+}
+async function attachUser(req, res, next) {
+    const user = await User.findByPk(req.session.user_id);
 
-router.post('/recipes', recipeController.createRecipe);
+    req.user = user && user.get({
+        plain: true
+    })
+    next();
+
+}
+router.post('/recipes', protect, attachUser, recipeController.createRecipe);
 
 // Get route to get a recipe by id
 router.get('/recipe/:id', recipeController.getRecipeById);

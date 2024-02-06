@@ -1,11 +1,5 @@
-<<<<<<< HEAD
 const User = require('../models/User');
 const Recipe = require('../models/Recipe');
-=======
-
-const User =require('../models/User')
-const Recipe =require('../models/Recipe')
->>>>>>> 9ec8181b93db11a1c9224431dc5962cc2cdbb3bd
 
 
 module.exports = {

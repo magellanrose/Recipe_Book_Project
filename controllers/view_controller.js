@@ -51,10 +51,10 @@ module.exports = {
         // [fn('date_format', col('createdAt'), '%m/%d/%Y'), 'formatted_date']
       ]
     });
-
+    console.log(recipes)
     res.render('data', {
       user: req.user,
-      recipes: recipes && recipes.map(recipeObj => recipeObj.get({ plain: true }))
+      recipes: recipes.map(recipeObj => recipeObj.get({ plain: true }))
     });
   },
 

@@ -13,7 +13,7 @@ const recipe_routes = require('./routes/recipe_routes');
 const view_routes = require('./routes/view_routes');
 const form_routes = require('./routes/form_routes');
 
-const PORT = 4444;
+const PORT = process.env.PORT || 4444;
 
 const app = express();
 
